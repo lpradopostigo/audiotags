@@ -83,6 +83,10 @@ impl<'a> std::convert::TryFrom<&'a id3::frame::Picture> for Picture<'a> {
 }
 
 impl AudioTagEdit for Id3v2Tag {
+    fn get(&self, key: &str) -> Option<Vec<&str>> {
+        unimplemented!()
+    }
+
     fn title(&self) -> Option<&str> {
         self.inner.title()
     }

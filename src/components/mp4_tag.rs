@@ -283,6 +283,10 @@ impl AudioTagEdit for Mp4Tag {
     fn remove_genre(&mut self) {
         self.inner.remove_genres();
     }
+
+    fn get(&self, key: &str) -> Option<Vec<&str>> {
+        unimplemented!()
+    }
 }
 
 impl AudioTagWrite for Mp4Tag {

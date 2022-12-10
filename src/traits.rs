@@ -11,6 +11,7 @@ pub trait AudioTag: AudioTagEdit + AudioTagWrite + ToAnyTag {}
 ///
 /// Constructor methods e.g. `from_file` should be implemented separately.
 pub trait AudioTagEdit: AudioTagConfig {
+    fn get(&self, key: &str) -> Option<Vec<&str>>;
     fn title(&self) -> Option<&str>;
     fn set_title(&mut self, title: &str);
     fn remove_title(&mut self);

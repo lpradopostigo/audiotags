@@ -83,6 +83,10 @@ impl FlacTag {
 }
 
 impl AudioTagEdit for FlacTag {
+    fn get(&self, key: &str) -> Option<Vec<&str>> {
+        self.inner.get_vorbis(key).map(|v| v.collect())
+    }
+
     fn title(&self) -> Option<&str> {
         self.get_first("TITLE")
     }
